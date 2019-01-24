@@ -19,4 +19,14 @@
     <servlet-name>StuServlet</servlet-name>
     <url-pattern>/StuServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Stuservlet02</display-name>
+    <servlet-name>Stuservlet02</servlet-name>
+    <servlet-class>cn.ouyang.web.servlet01.Stuservlet02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Stuservlet02</servlet-name>
+    <url-pattern>/Stuservlet02</url-pattern>
+  </servlet-mapping>
 </web-app>
