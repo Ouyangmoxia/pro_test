@@ -17,12 +17,12 @@
 --%>>
 <hr>
 <%--1通过表单发起请求--%>
-	<form method="post" action="${pageContext.request.contextPath}/Stuservlet02?method=addStu">
+	<form method="post" action="${pageContext.request.contextPath}/Stuservlet03?method=addStu">
 		输入姓名：<input type="text" name="stuName"/><button>提交</button>
 	</form>
 <hr>
 <%--1通过链接发起请求--%>
-	<a href="${pageContext.request.contextPath}/Stuservlet02?method=delStu&stuId=001">删除学生</a>
+	<a href="${pageContext.request.contextPath}/Stuservlet03?method=delStu&stuId=001">删除学生</a>
 <hr>
 <%--1通过Ajax发起请求--%>
 	<button id="btn01">用AJAX发起请求</button>
@@ -36,7 +36,7 @@
 		//页面加载完毕
 		//为id为btn的按钮绑定点击事件，通过点点击事件向服务器发起ajax请求
 		$("#btn01").click(function(){
-			$.post("Stuservlet02", {"method":"updateStu","stuId":"s002"}, function(data){
+			$.post("Stuservlet03", {"method":"updateStu","stuId":"s002"}, function(data){
 				//在火狐浏览器控制台下打印服务端信息
 				console.log(data);
 				return;
@@ -46,7 +46,7 @@
 		//为id为btn02的按钮绑定点击事件，通过点点击事件向服务器发起请求
 		$("#btn02").click(function(){
 			//通过点击事件向服务器发起请求，location.href=""
-			location.href="Stuservlet02?method=findStu";
+			location.href="Stuservlet03?method=findStu";
 		});
 	});
 	</script>

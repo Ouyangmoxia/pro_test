@@ -29,4 +29,24 @@
     <servlet-name>Stuservlet02</servlet-name>
     <url-pattern>/Stuservlet02</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Baseservlet</display-name>
+    <servlet-name>Baseservlet</servlet-name>
+    <servlet-class>cn.ouyang.web.baseservlet.Baseservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Baseservlet</servlet-name>
+    <url-pattern>/Baseservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Stuservlet03</display-name>
+    <servlet-name>Stuservlet03</servlet-name>
+    <servlet-class>cn.ouyang.web.servlet01.Stuservlet03</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Stuservlet03</servlet-name>
+    <url-pattern>/Stuservlet03</url-pattern>
+  </servlet-mapping>
 </web-app>
