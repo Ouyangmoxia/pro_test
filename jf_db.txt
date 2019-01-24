@@ -1,0 +1,127 @@
+create table t_admin(
+	userId int(11) not null auto_increment,	#管理员的编号 
+	userName varchar(66) default null, 		#管理员的分录名
+	userPw varchar(55) default null,		#管理员的密码	
+	primary key(userId)
+)engine=innodb default charset=utf8;
+
+insert into t_admin values('1', '001', '123');
+insert into t_admin values('2', '002', '123');
+insert into t_admin values('3', '003', '123');
+
+drop table if exists t_doc;
+create table t_doc(
+	id int(11) not null auto_increment,			#资料编号
+	name varchar(66) default null, 				#资料描述
+	attachment varchar(50) default null,		#资料在目录中的真实名称
+	attachmentOldName varchar(55) default null, #资料的原始名称
+	uploadTime varchar(50) default null,		#上传时间
+	del varchar(50) default null,				#是否删除
+	primary key(id)
+)engine=innodb default charset=utf8;
+
+insert into t_doc values(null, 'servlet_技术1', '11111111.doc', 'day01_笔记1.docx', '2016-05-11', 'no'); 
+insert into t_doc values(null, 'servlet_技术2', '11111112.doc', 'day01_笔记2.docx', '2016-05-12', 'no'); 
+insert into t_doc values(null, 'servlet_技术3', '11111113.doc', 'day01_笔记3.docx', '2016-05-13', 'no'); 
+insert into t_doc values(null, 'servlet_技术4', '11111114.doc', 'day01_笔记4.docx', '2016-05-14', 'no'); 
+insert into t_doc values(null, 'servlet_技术5', '11111115.doc', 'day01_笔记5.docx', '2016-05-15', 'no'); 
+insert into t_doc values(null, 'servlet_技术6', '11111116.doc', 'day01_笔记6.docx', '2016-05-16', 'no'); 
+insert into t_doc values(null, 'servlet_技术7', '11111117.doc', 'day01_笔记7.docx', '2016-05-17', 'no'); 
+insert into t_doc values(null, 'servlet_技术8', '11111118.doc', 'day01_笔记8.docx', '2016-05-18', 'no'); 
+
+drop table if exists t_vedio;
+create table t_vedio(
+	vedioId int(11) not null auto_increment,			#视频编号
+	vedioName varchar(66) default null, 				#视频名称
+	vedioPro varchar(2000) default null, 				#视频描述
+	vedioAttachment varchar(55) default null, 			#视频在目录下的真实名称
+	vedioAttachmentOldName varchar(2000) default null,	#视频原始名称
+	uploadTime varchar(50) default null,				#视频上传时间
+	del varchar(50) default null,						#视频是否删除
+	primary key(vedioId)
+)engine=innodb default charset=utf8;
+
+insert into t_vedio values(null, 'jdk新东西', '黑码新特性jdk8新特性1', '11111.avi', '新特性.avi', '2016-02-01', 'no');
+insert into t_vedio values(null, 'jdk新东西2', '黑码新特性jdk8新特性2', '11112.avi', '新特性2.avi', '2016-02-02', 'no');
+insert into t_vedio values(null, 'jdk新东西3', '黑码新特性jdk8新特性3', '11113.avi', '新特性3.avi', '2016-02-03', 'no');
+insert into t_vedio values(null, 'jdk新东西4', '黑码新特性jdk8新特性4', '11114.avi', '新特性4.avi', '2016-02-04', 'no');
+insert into t_vedio values(null, 'jdk新东西5', '黑码新特性jdk8新特性5', '11115.avi', '新特性5.avi', '2016-02-05', 'no');
+insert into t_vedio values(null, 'jdk新东西6', '黑码新特性jdk8新特性6', '11116.avi', '新特性6.avi', '2016-02-06', 'no');
+insert into t_vedio values(null, 'jdk新东西7', '黑码新特性jdk8新特性7', '11117.avi', '新特性7.avi', '2016-02-07', 'no');
+
+drop table if exists t_exam;
+create table t_exam(
+	examId int(11) not null auto_increment,		#试题编号
+	examName varchar(66) default null, 			#试题名称
+	attachment varchar(55) default null, 		#试题在目录下的真实名称
+	attachmentOldName varchar(50) default null,	#试题的原始名称
+	uploadTime varchar(50) default null,		#试题的上传时间
+	del varchar(50) default null,				#是否删除
+	primary key(examId)
+)engine=innodb default charset=utf8;
+
+insert into t_exam values(null, 'java测试1', '111.doc', 'java基础测试1.doc', '2016-01-01', 'no');
+insert into t_exam values(null, 'java测试2', '112.doc', 'java基础测试2.doc', '2016-01-02', 'no');
+insert into t_exam values(null, 'java测试3', '113.doc', 'java基础测试3.doc', '2016-01-03', 'no');
+insert into t_exam values(null, 'java测试4', '114.doc', 'java基础测试4.doc', '2016-01-04', 'no');
+insert into t_exam values(null, 'java测试5', '115.doc', 'java基础测试5.doc', '2016-01-05', 'no');
+insert into t_exam values(null, 'java测试6', '116.doc', 'java基础测试6.doc', '2016-01-06', 'no');
+insert into t_exam values(null, 'java测试7', '117.doc', 'java基础测试7.doc', '2016-01-07', 'no');
+
+drop table if exists t_stu;
+create table t_stu(
+	stuId int(11) not null auto_increment,		#学生编号
+	stuNum varchar(66) default null,			#学生学号
+	stuRealname varchar(50) default null,		#学生真实性名
+	stuSex varchar(55) default null,			#学生性别
+	strAge varchar(50) default null,			#学生年龄
+	loginPw varchar(50) default null,			#学生登录密码
+	status varchar(50) default null,			#学生是否毕业
+	del varchar(50) default null,				#学生是否删除
+	primary key(stuId)
+)engine=innodb default charset=utf8;
+
+insert into t_stu values(null, '201601', 'tom', '男', '23', 123456, 'y', 'no');
+insert into t_stu values(null, '201602', 'mary', '女', '23', 123456, 'y', 'no');
+insert into t_stu values(null, '201603', 'luky', '男', '13', 123456, 'y', 'no');
+insert into t_stu values(null, '201604', 'jack', '男', '25', 123456, 'y', 'no');
+insert into t_stu values(null, '201605', 'smith', '女', '26', 123456, 'y', 'no');
+insert into t_stu values(null, '201606', 'piter', '男', '27', 123456, 'y', 'no');
+
+drop table if exists t_message;
+create table t_message(
+	messageId int(11) not null auto_increment,	#留言编号
+	content varchar(2000) default null,			#留言内容
+	leveWordTime varchar(55) default null,		#留言时间
+	stuId int(11) default null,					#留言学生编号
+	replay varchar(2000) default null, 			#回复内容
+	replayTime varchar(50) default null,		#回复时间
+	primary key(messageId)
+);
+
+alter table t_message add constraint fk_id foreign key(stuId) references t_stu(stuId);
+
+insert into t_message values(null, 'java线程方式1', '2016-01-01', '1', '继承thread,实现runnable接口','2016-01-02');
+insert into t_message values(null, 'java线程方式2', '2016-01-02', '2', '继承thread,实现runnable接口','2016-02-02');
+insert into t_message values(null, 'java线程方式3', '2016-01-03', '3', '继承thread,实现runnable接口','2016-03-02');
+insert into t_message values(null, 'java线程方式4', '2016-01-04', '4', '继承thread,实现runnable接口','2016-04-02');
+insert into t_message values(null, 'java线程方式5', '2016-01-05', '5', '继承thread,实现runnable接口','2016-05-02');
+insert into t_message values(null, 'java线程方式6', '2016-01-06', '6', '继承thread,实现runnable接口','2016-06-02');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
